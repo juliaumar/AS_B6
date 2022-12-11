@@ -5,7 +5,7 @@ Feature: Home Page Related Scenarios
     Given I open url of homepage
 
 
-  @AS-3 @Tariq
+  @AS-3 @Tariq @smoke
   Scenario Outline: Verify contact info is displayed in the top of the main page
     Then Verify "<Contact>" info is displayed
     Examples:
@@ -15,11 +15,11 @@ Feature: Home Page Related Scenarios
       | Quick Contact:    |
       | +1 703-831-3217   |
 
-  @AS-6 @Nurik
+  @AS-6 @Nurik @smoke
   Scenario: Verify the Title of the page
     Then Verify Title of the page is "Advance Systems - Home"
 
-  @AS-7 @Oksana
+  @AS-7 @Oksana @smoke
   Scenario Outline: Verify the navigation bar have following buttons
     Then Verify the buttons"<NavigationBar>" are displayed
     Examples:
@@ -28,7 +28,7 @@ Feature: Home Page Related Scenarios
       | Job Career    |
       | Feedback      |
 
-  @AS-7
+  @AS-7 @smoke
   Scenario Outline: Verify Languages on the Navigation bar
     When User click on Language section button
     Then User Verify "<Languages>" buttons are displayed
@@ -39,7 +39,7 @@ Feature: Home Page Related Scenarios
       | French    |
 
   @Gabriella
-  @AS-4
+  @AS-4 @smoke
   Scenario: Verify the Header, Description and Read More button
     When User Verify "Header" is displayed
     And User Verify "Description" text is displayed
@@ -47,7 +47,7 @@ Feature: Home Page Related Scenarios
     Then User click on "Read More" Btn
     And  Verify "Advance Systems - Home" button takes User to page
 
-  @AS-14 @Tariq
+  @AS-14 @Tariq @smoke
   Scenario Outline: Verify Following information is displayed in footer section
     Then Verify "<FooterInfo>" is displayed
     Examples:
