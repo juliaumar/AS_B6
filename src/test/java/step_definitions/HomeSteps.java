@@ -1,10 +1,13 @@
 package step_definitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import pages.CommonPage;
 import pages.HomePage;
 import utils.BrowserUtils;
@@ -30,5 +33,74 @@ public class HomeSteps implements CommonPage {
                 BrowserUtils.getDriver().findElement(
                         By.xpath(String.format(XPATH_TEMPLATE_TEXT, Contact))));
 
+    }
+
+    @Then("Verify Title of the page is {string}")
+    public void verifyTitleOfThePageIs(String title) {
+        BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), title);
+    }
+
+    @Then("Verify the buttons{string} are displayed")
+    public void verifyTheButtonsAreDisplayed(String NavigationBar) {
+        BrowserUtils.isDisplayed(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_TEXT, NavigationBar))));
+
+
+    }
+
+    @When("User click on Language section button")
+    public void userClickOnLanguageSectionButton() {
+        BrowserUtils.click(page.languagesBar);
+    }
+
+
+    @Then("User Verify {string} buttons are displayed")
+    public void userVerifyButtonsAreDisplayed(String languages) {
+        BrowserUtils.isDisplayed(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_TEXT, languages))));
+
+    }
+
+
+
+
+
+    @When("User Verify {string} is displayed")
+    public void userVerifyIsDisplayed(String arg0) {
+        BrowserUtils.isDisplayed(page.header);
+    }
+
+    @And("User Verify {string} text is displayed")
+    public void userVerifyTextIsDisplayed(String desc) {
+        BrowserUtils.isDisplayed(page.text);
+    }
+
+
+    @Then("User Verify {string} button is displayed")
+    public void userVerifyButtonIsDisplayed(String arg0) {
+        BrowserUtils.isDisplayed(page.readMoreBtn);
+    }
+
+
+    @Then("User click on {string} Btn")
+    public void userClickOnBtn(String arg0) {
+        BrowserUtils.isEnabled(page.btn);
+
+    }
+
+
+    @And("Verify {string} button takes User to page")
+    public void verifyButtonTakesUserToPage(String Title) {
+        BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), Title);
+
+    }
+
+    @Then("Verify {string} is displayed")
+    public void verifyIsDisplayed(String FooterInfo) {
+        BrowserUtils.isDisplayed(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_TEXT_CONTAINS, FooterInfo))));
     }
 }

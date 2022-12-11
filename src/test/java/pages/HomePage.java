@@ -12,6 +12,24 @@ public class HomePage {
     public HomePage() {
         PageFactory.initElements(BrowserUtils.getDriver(), this);
     }
-    @FindBy(xpath="//*[@class='info-box-one']")
-    public List<WebElement> contactInfo;
+    @FindBy(xpath="//*[@class='icon fa fa-angle-down']")
+    public WebElement languagesBar;
+
+    @FindBy(xpath = "//*[contains(text(), 'A bright career')]")
+    public WebElement header;
+
+    @FindBy(xpath = "//*[contains(text(), 'Our Career Network')]")
+    public WebElement text;
+
+    @FindBy(xpath = "//*[contains(text(), 'Read More')]")
+    public WebElement readMoreBtn;
+
+   @FindBy(xpath ="//*[@class='theme-btn btn-style-two']")
+    public WebElement btn;
+
+
+
+
+
+
 }
