@@ -37,7 +37,7 @@ Feature: Home Page Related Scenarios
       | English   |
       | Spanish   |
       | French    |
-      | Uzbek     |
+
 
   @Gabriella
   @AS-4 @smoke
