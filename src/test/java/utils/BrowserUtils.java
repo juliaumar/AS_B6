@@ -125,7 +125,6 @@ public class BrowserUtils {
         moveIntoView(element);
         highlightElement(element);
         waitForElementClickability(element);
-        moveIntoView(element);
         element.click();
     }
 
@@ -155,6 +154,7 @@ public class BrowserUtils {
     public static boolean isEnabled(WebElement element){
         waitForElementClickability(element);
         moveIntoView(element);
+
         highlightElement(element);
         return element.isEnabled();
     }

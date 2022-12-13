@@ -24,7 +24,7 @@ public class HomePage {
     @FindBy(xpath = "//*[contains(text(), 'Read More')]")
     public WebElement readMoreBtn;
 
-   @FindBy(xpath ="//*[@href ='services.html'][@class='theme-btn btn-style-two']")
+   @FindBy(xpath ="//div[@id='layer-92874325']//a[@class='theme-btn btn-style-two'][normalize-space()='Read More']")
     public WebElement btn;
 
 

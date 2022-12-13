@@ -4,9 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.CommonPage;
 import pages.HomePage;
@@ -14,6 +13,8 @@ import utils.BrowserUtils;
 
 public class HomeSteps implements CommonPage {
     HomePage page;
+    private int seconds;
+
 
     public HomeSteps() {
         page = new HomePage();
@@ -69,8 +70,7 @@ public class HomeSteps implements CommonPage {
 
     @When("User Verify {string} is displayed")
     public void userVerifyIsDisplayed(String arg0) {
-        BrowserUtils.waitForElementVisibility(page.header);
-
+      //  BrowserUtils.waitForElementVisibility(page.header);
         BrowserUtils.isDisplayed(page.header);
     }
     //AS-4
@@ -81,15 +81,19 @@ public class HomeSteps implements CommonPage {
 
     //AS-4
     @Then("User Verify {string} button is displayed")
-    public void userVerifyButtonIsDisplayed(String arg0) {
+    public void userVerifyButtonIsDisplayed(String arg0)  {
         BrowserUtils.isDisplayed(page.readMoreBtn);
+
+
     }
 
     //AS-4
     @Then("User click on {string} Btn")
-    public void userClickOnBtn(String arg0) throws InterruptedException {
+    public void userClickOnBtn(String args0) {
 
-        BrowserUtils.click(page.btn);
+        Actions at = new Actions(BrowserUtils.getDriver());
+        at.sendKeys(Keys.PAGE_UP).build().perform();
+        BrowserUtils.click(page.readMoreBtn);
         BrowserUtils.switchToNewWindow();
 
     }
@@ -97,6 +101,7 @@ public class HomeSteps implements CommonPage {
     //AS-4
     @And("Verify {string} button takes User to page")
     public void verifyButtonTakesUserToPage(String Title) {
+
         BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), Title);
 
     }
@@ -108,3 +113,6 @@ public class HomeSteps implements CommonPage {
                         By.xpath(String.format(XPATH_TEMPLATE_TEXT_CONTAINS, FooterInfo))));
     }
 }
+
+
+// BrowserUtils.sleep(seconds * 1000);
