@@ -40,7 +40,7 @@ Feature: Home Page Related Scenarios
 
 
   @Gabriella
-  @AS-4 @smoke
+  @AS-4
   Scenario: Verify the Header, Description and Read More button
     When User Verify "Header" is displayed
     And User Verify "Description" text is displayed

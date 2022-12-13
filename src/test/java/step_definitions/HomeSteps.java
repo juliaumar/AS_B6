@@ -88,7 +88,7 @@ public class HomeSteps implements CommonPage {
     //AS-4
     @Then("User click on {string} Btn")
     public void userClickOnBtn(String arg0) throws InterruptedException {
-        Thread.sleep(60000);
+
         BrowserUtils.click(page.btn);
         BrowserUtils.switchToNewWindow();
 
