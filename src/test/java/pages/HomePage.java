@@ -24,7 +24,7 @@ public class HomePage {
     @FindBy(xpath = "//*[contains(text(), 'Read More')]")
     public WebElement readMoreBtn;
 
-   @FindBy(xpath ="//*[@class='theme-btn btn-style-two']")
+   @FindBy(xpath ="//*[@href ='services.html'][@class='theme-btn btn-style-two']")
     public WebElement btn;
 
 

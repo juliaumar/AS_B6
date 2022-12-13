@@ -58,7 +58,7 @@ public class BrowserUtils {
 
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(ConfigReader.readProperty("url"));
     }
 
@@ -122,9 +122,10 @@ public class BrowserUtils {
 
     public static void click(WebElement element){
         //TODO: apply report -> logInfo("clicked the button ", element);
-        waitForElementClickability(element);
         moveIntoView(element);
         highlightElement(element);
+        waitForElementClickability(element);
+        moveIntoView(element);
         element.click();
     }
 

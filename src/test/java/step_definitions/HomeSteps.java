@@ -65,32 +65,36 @@ public class HomeSteps implements CommonPage {
 
 
 
-
+    //AS-4
 
     @When("User Verify {string} is displayed")
     public void userVerifyIsDisplayed(String arg0) {
+        BrowserUtils.waitForElementVisibility(page.header);
+
         BrowserUtils.isDisplayed(page.header);
     }
-
+    //AS-4
     @And("User Verify {string} text is displayed")
     public void userVerifyTextIsDisplayed(String desc) {
         BrowserUtils.isDisplayed(page.text);
     }
 
-
+    //AS-4
     @Then("User Verify {string} button is displayed")
     public void userVerifyButtonIsDisplayed(String arg0) {
         BrowserUtils.isDisplayed(page.readMoreBtn);
     }
 
-
+    //AS-4
     @Then("User click on {string} Btn")
-    public void userClickOnBtn(String arg0) {
-        BrowserUtils.isEnabled(page.btn);
+    public void userClickOnBtn(String arg0) throws InterruptedException {
+        Thread.sleep(60000);
+        BrowserUtils.click(page.btn);
+        BrowserUtils.switchToNewWindow();
 
     }
 
-
+    //AS-4
     @And("Verify {string} button takes User to page")
     public void verifyButtonTakesUserToPage(String Title) {
         BrowserUtils.assertEquals(BrowserUtils.getDriver().getTitle(), Title);

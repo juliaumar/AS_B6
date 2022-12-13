@@ -46,7 +46,7 @@ Feature: Home Page Related Scenarios
     And User Verify "Description" text is displayed
     Then User Verify "Read More" button is displayed
     Then User click on "Read More" Btn
-    And  Verify "Advance Systems - Home" button takes User to page
+    And  Verify "Advance Systems - Services" button takes User to page
 
   @AS-14 @Tariq @smoke
   Scenario Outline: Verify Following information is displayed in footer section
