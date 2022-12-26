@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.CommonPage;
@@ -86,7 +87,11 @@ public class HomeSteps implements CommonPage {
 
     @Then("User click on {string} Btn")
     public void userClickOnBtn(String arg0) {
-        BrowserUtils.isEnabled(page.btn);
+        Actions at = new Actions(BrowserUtils.getDriver());
+        at.sendKeys(Keys.PAGE_UP).build().perform();
+        BrowserUtils.click(page.readMoreBtn);
+        BrowserUtils.switchToNewWindow();
+
 
     }
 

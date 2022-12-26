@@ -133,6 +133,9 @@ public class BrowserUtils {
         //TODO: apply report -> logInfo("Actual: " + actual);
         Assert.assertEquals(expected, actual);
     }
+    public static WebDriver checkDriverStatus() {
+        return driver;
+    }
 
     public static void assertFalse(boolean result){
         //TODO: apply report -> logInfo("Expected: " + result);
